@@ -13,6 +13,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.github.terrakok.cicerone.Cicerone
 import com.github.terrakok.cicerone.Router
+import com.handen.characters.ui.CharactersScreen
 import com.handen.rickandmortycompose.navigation.ComposeNavigator
 import com.handen.rickandmortycompose.navigation.ComposeNavigatorImpl
 import com.handen.rickandmortycompose.navigation.ComposeScreen
@@ -121,11 +122,6 @@ enum class Screens : ComposeScreen {
         @Composable
         override fun compose() = LocationsScreen()
     }
-}
-
-@Composable
-fun CharactersScreen() {
-    Text("Characters")
 }
 
 @Composable

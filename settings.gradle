@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "RickAndMortyCompose"
 include ':app'
+include ':feature-characters'
