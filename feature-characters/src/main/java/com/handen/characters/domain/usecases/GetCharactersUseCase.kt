@@ -4,5 +4,5 @@ import com.handen.characters.domain.entities.Character
 import kotlinx.coroutines.flow.Flow
 
 fun interface GetCharactersUseCase {
-    operator fun invoke(): Flow<List<Character>>
+    suspend operator fun invoke(): Flow<List<Character>>
 }

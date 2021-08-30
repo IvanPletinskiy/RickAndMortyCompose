@@ -1,12 +1,16 @@
 package com.handen.characters.di
 
 import com.google.gson.Gson
+import com.handen.characters.data.local.LocalDataStore
+import com.handen.characters.data.local.LocalDataStoreImpl
 import com.handen.characters.data.remote.RemoteApi
 import com.handen.characters.data.remote.RemoteDataService
 import com.handen.characters.data.remote.RemoteDataServiceImpl
 import com.handen.characters.data.usecases.GetCharactersUseCaseImpl
 import com.handen.characters.domain.usecases.GetCharactersUseCase
 import com.handen.characters.util.BASE_URL
+import com.handen.characters.util.concurrent.DispatcherProvider
+import com.handen.characters.util.concurrent.DispatcherProviderImpl
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -19,7 +23,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 abstract class CharactersModule {
@@ -31,6 +34,14 @@ abstract class CharactersModule {
     @Binds
     @Singleton
     abstract fun bindRemoteDataService(remoteDataServiceImpl: RemoteDataServiceImpl): RemoteDataService
+
+    @Binds
+    @Singleton
+    abstract fun bindLocalDataStore(localDataStoreImpl: LocalDataStoreImpl): LocalDataStore
+
+    @Binds
+    @Singleton
+    abstract fun bindDispatcherProvider(dispatcherProviderImpl: DispatcherProviderImpl): DispatcherProvider
 
     companion object {
         @Provides

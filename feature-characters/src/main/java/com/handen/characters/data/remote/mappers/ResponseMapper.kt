@@ -16,6 +16,7 @@ class ResponseMapper @Inject constructor(){
 
     private fun map(response: CharacterResponse) =
         Character(
+            response.id,
             response.name,
             response.species,
             response.status,
