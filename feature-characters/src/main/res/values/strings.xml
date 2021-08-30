@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="name">Name:</string>
+    <string name="species">Species: </string>
+    <string name="status">Status: </string>
+    <string name="gender">Gender: </string>
+</resources>

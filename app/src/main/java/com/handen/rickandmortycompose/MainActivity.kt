@@ -19,7 +19,9 @@ import com.handen.rickandmortycompose.navigation.ComposeNavigatorImpl
 import com.handen.rickandmortycompose.navigation.ComposeScreen
 import com.handen.rickandmortycompose.ui.theme.Grey
 import com.handen.rickandmortycompose.ui.theme.RickAndMortyComposeTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val navigator = ComposeNavigatorImpl(Screens.CharactersScreen, finish = {
         finish()
