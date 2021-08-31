@@ -19,7 +19,7 @@ object DatabaseModule {
     fun provideDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(
             context,
-            AppDatabase::class.java, "appDatabase"
+            AppDatabase::class.java, AppDatabase.DATABASE_NAME
         ).build()
     }
 
@@ -29,45 +29,3 @@ object DatabaseModule {
         return database.charactersDao
     }
 }
-
-//@Module
-//@InstallIn(SingletonComponent::class)
-//abstract class DatabaseModule {
-//
-//    companion object {
-//        private const val DATABASE_NAME = "appDatabase"
-//
-////        @Provides
-////        @Singleton
-////        fun provideDatabase(): AppDatabase {
-//////        Room.databaseBuilder(
-//////            context,
-//////            AppDatabase::class.java, DATABASE_NAME
-//////        ).build()
-////            return MyDatabase()
-////        }
-//
-//        class MyDatabase : AppDatabase() {
-//            override val charactersDao: CharactersDao
-//                get() = TODO("Not yet implemented")
-//
-//            override fun createOpenHelper(config: DatabaseConfiguration?): SupportSQLiteOpenHelper {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun createInvalidationTracker(): InvalidationTracker {
-//                TODO("Not yet implemented")
-//            }
-//
-//            override fun clearAllTables() {
-//                TODO("Not yet implemented")
-//            }
-//        }
-//    }
-//
-////        @Provides
-////        @Singleton
-////        fun provideCharactersDao(database: AppDatabase): CharactersDao {
-////            return database.charactersDao
-////        }
-//}

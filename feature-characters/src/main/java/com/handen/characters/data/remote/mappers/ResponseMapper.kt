@@ -7,7 +7,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ResponseMapper @Inject constructor(){
+class ResponseMapper @Inject constructor() {
     fun map(response: GetCharactersResponse): List<Character> {
         return response.results.map {
             map(it)

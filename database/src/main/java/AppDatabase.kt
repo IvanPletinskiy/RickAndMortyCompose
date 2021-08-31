@@ -9,4 +9,8 @@ import com.handen.database.model.DataCharacter
 abstract class AppDatabase : RoomDatabase() {
 
     abstract val charactersDao: CharactersDao
+
+    companion object {
+        internal const val DATABASE_NAME = "appDatabase"
+    }
 }

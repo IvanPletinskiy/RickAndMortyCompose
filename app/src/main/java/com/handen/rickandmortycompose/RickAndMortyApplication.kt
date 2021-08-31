@@ -10,7 +10,4 @@ class RickAndMortyApplication:  Application() {
     val router get() = cicerone.router
     val navigatorHolder get() = cicerone.getNavigatorHolder()
 
-    override fun onCreate() {
-        super.onCreate()
-    }
 }
